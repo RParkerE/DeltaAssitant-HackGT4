@@ -1,0 +1,63 @@
+ <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon>
+        <img alt="Menu" height="35px" src="assets/img/dashboard.png">
+      </ion-icon>
+    </button>
+
+    <ion-title>
+          <img alt="Delta Assist" height="30px" src="assets/img/deltaWordLogo.png" align="middle">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ng-template #bookFlight>
+    <button ion-button round (click)="openPlanner()"> Let's Book a Flight! </button>
+  </ng-template>
+  <ng-container *ngIf="true; else bookFlight">
+    <ion-content>
+      <ion-card>
+        <ion-card-header text-center>
+          <h1 style="color:#003A70;"><strong>Flight Information</strong></h1>
+        </ion-card-header>
+        <ion-card-content>
+          <div class='textContainer'>
+            <b style="color:#862633;font-size:16px;">Flight:</b> Delta Airlines DL31<br>
+            <b style="color:#862633;font-size:16px;">Destination:</b> ATL to SEA<br>
+            <b style="color:#862633;font-size:16px;">Gate:</b> A22<br>
+            <b style="color:#862633;font-size:16px;">Departure:</b> 12/22/2017 @ 3:35PM<br>
+            <b style="color:#862633;font-size:16px;">Boarding Zone/Seat:</b> D3/24C<br>
+          </div>
+          <ion-item text-center>
+            <a href = "http://www4.ncsu.edu/~dfechelb/qr.jpg" alt="Boarding Pass">
+            <button ion-button>
+              Boarding Pass
+            </button>
+            </a>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <h1 style="color:#003A70;text-align:center"><strong>Estimated Gate Arrival Time</strong></h1>
+        </ion-card-header>
+          <h2 style="color:#862633;text-align:center"><strong>3:01 PM</strong></h2><br>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <h1 style="color:#003A70;text-align:center"><strong>Estimated Gate Arrival Time</strong></h1>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #lineCanvas></canvas>
+        </ion-card-content>
+        <ion-item text-center>
+          <a href ="https://universalenroll.dhs.gov/workflows?servicecode=11115V&service=pre-enroll"><button ion-button>Enroll in TSA Pre-Check Now!</button></a>
+        </ion-item>
+      </ion-card>
+    </ion-content>
+  </ng-container>
+
+</ion-content>

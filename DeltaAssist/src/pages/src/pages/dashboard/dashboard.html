@@ -1,0 +1,49 @@
+ <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon>
+        <img alt="Menu" height="35px" src="assets/img/dashboard.png">
+      </ion-icon>
+    </button>
+
+    <div class="vr">&nbsp;</div>
+
+    <ion-title>
+          <img alt="Delta Assist" height="30px" src="assets/img/deltaWordLogo.png" align="middle">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+  </p>
+
+  <ng-template #bookFlight>
+    <button ion-button round (click)="openPlanner()"> Let's Book a Flight! </button>
+  </ng-template>
+  <ng-container *ngIf="true; else bookFlight">
+    <ion-card>
+      <ion-card-header>
+        Flight Information:
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        Estimated Gate Arrival Time:
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        TSA Wait Time:
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>
